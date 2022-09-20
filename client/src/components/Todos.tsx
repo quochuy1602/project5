@@ -137,8 +137,8 @@ export class Todos extends React.PureComponent<TodosProps, TodosState> {
         this.props.auth.getIdToken(),
         s3Key
       );
-      console.log("Download URL: ", downloadUrl);
-      download(downloadUrl, attachmentUrlParts[length - 1]);
+      const URL = 'https://'+attachmentUrlParts[length - 2] + '/'+attachmentUrlParts[length - 1];
+      download(URL, attachmentUrlParts[length - 1]);
     }
   };
   async componentDidMount() {
